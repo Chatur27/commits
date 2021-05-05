@@ -22,11 +22,11 @@ jobs:
           git config --global user.name ${GitHubName}
           git config --global credential.helper store
           echo "https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+          git clone https://github.com/Chatur27/commits.git /home/runner/work/gay/
 
       - name: Loop Workflow
         continue-on-error: true
         run: |
-          git clone https://github.com/Chatur27/commits.git /home/runner/work/gay/
           cd /home/runner/work/gay
           source looper.sh
 
